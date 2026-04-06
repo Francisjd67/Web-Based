@@ -44,6 +44,16 @@ let updatePage = function () {
 
     let image = document.getElementById("hangmanpic");
     image.src = `images/hangman${guessCount}.gif`;
+
+    if (word === "") {
+        
+    } else if (Win()) {
+        guessArea.textContent = "Guesses: " + guesses + " You win";
+    } else if (Lose()) {
+        guessArea.textContent = "Guesses: " + guesses + " You lose";
+    } else {
+        guessArea.textContent = "Guesses: " + guesses;
+    }
 }
 
 let Win = function () {
