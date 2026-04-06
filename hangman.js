@@ -80,16 +80,18 @@ let guessLetter = function () {
 
     input.value = "";
 
-    if (letter === "") {
+    if (word === "") {
         return;
     }
+
 
     if (gameOver){
         return;
     }
 
     if (guesses.indexOf(letter) >= 0) {
-        input.value = "";
+        document.getElementById("guesses").textContent =
+            "Guesses: " + guesses;
         return;
     }
 
