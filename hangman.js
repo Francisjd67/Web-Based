@@ -78,6 +78,8 @@ let guessLetter = function () {
     let input = document.getElementById("guess");
     let letter = input.value.toLowerCase();
 
+    input.value = "";
+    
     if (letter === "") {
         return;
     }
