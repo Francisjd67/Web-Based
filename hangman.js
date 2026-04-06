@@ -79,8 +79,12 @@ let guessLetter = function () {
     let letter = input.value.toLowerCase();
 
     input.value = "";
-    
+
     if (letter === "") {
+        return;
+    }
+
+    if (gameOver){
         return;
     }
 
@@ -95,6 +99,10 @@ let guessLetter = function () {
 
     guesses += letter;
     input.value = "";
+
+     if (Win() || Lose()) {
+        gameOver = true;
+    }
 
     updatePage();
 }
