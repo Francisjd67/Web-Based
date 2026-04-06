@@ -44,7 +44,7 @@ let updatePage = function () {
 
     let image = document.getElementById("hangmanpic");
     image.src = `images/hangman${guessCount}.gif`;
-};
+}
 
 let Win = function () {
     if (word === "") {
@@ -58,7 +58,11 @@ let Win = function () {
     }
 }
     return true;
-};
+}
+
+let Lose = function () {
+    return guessCount <= 0;
+}
 
 let guessLetter = function () {
     let input = document.getElementById("guess");
@@ -81,4 +85,4 @@ let guessLetter = function () {
     input.value = "";
 
     updatePage();
-};
+}
