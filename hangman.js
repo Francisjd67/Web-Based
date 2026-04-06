@@ -16,6 +16,8 @@ let gameOver = false;
 
 let newGame = function () {
     guessCount = MAX_GUESSES;
+    guesses = "";
+    gameOver = false;
     
     let randomIndex = Math.floor(Math.random() * POSSIBLE_WORDS.length);
     word = POSSIBLE_WORDS[randomIndex];
