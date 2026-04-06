@@ -12,9 +12,11 @@ const MAX_GUESSES = 6;
 let word = "";
 let guesses = "";
 let guessCount = MAX_GUESSES;
+let gameOver = false;
 
 let newGame = function () {
     guessCount = MAX_GUESSES;
+    
     let randomIndex = Math.floor(Math.random() * POSSIBLE_WORDS.length);
     word = POSSIBLE_WORDS[randomIndex];
     guesses = "";
@@ -42,6 +44,20 @@ let updatePage = function () {
 
     let image = document.getElementById("hangmanpic");
     image.src = `images/hangman${guessCount}.gif`;
+};
+
+let Win = function () {
+    if (word === "") {
+        return false;
+    }
+
+    for (let i = 0; i < word.length; i++){
+     let currentLetter = word.charAt(i);
+        if (guesses.indexOf(currentLetter) < 0) {
+            return false;   
+    }
+}
+    return true;
 };
 
 let guessLetter = function () {
