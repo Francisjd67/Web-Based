@@ -10,7 +10,7 @@ h1{
 text-align: center; 
 }
 
-#square {
+.square {
 width:50px;
 height: 50px;
 position: absolute;
