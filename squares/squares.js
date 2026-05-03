@@ -1,6 +1,7 @@
 let squareArea = document.querySelector("#squarearea");
 let squareCount = parseInt(Math.random()*21)+30;
 //attach the addSquare function to the button
+
 document.querySelector("#add").onclick=addSquare;
 for (let i = 0; i < squareCount; i++) {
     addSquare();
@@ -19,6 +20,11 @@ function getRandomColor(){
 function addSquare(){
     //Make this add a single square
     let square = document.createElement("div");
+
+    let size = Math.floor(Math.random() * 40) + 45;
+    square.style.width = size + "px";
+    square.style.height = size + "px";
+
     square.className = "square";
     square.style.left = parseInt(Math.random()*650) + "px";
     square.style.top = parseInt(Math.random()*300) + "px";
