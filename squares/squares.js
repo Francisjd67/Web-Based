@@ -32,3 +32,9 @@ function addSquare(){
 //write the function to change all colors
 //get all the squares as an array 
 //call the getRandomColor on them to change their colors
+document.querySelector("#change").onclick=function(){
+    let squares = document.querySelectorAll(".square");
+    squares.forEach(function(square){
+        square.style.backgroundColor = getRandomColor();
+    });
+};
