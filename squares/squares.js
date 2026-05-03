@@ -25,13 +25,27 @@ function addSquare(){
     square.style.backgroundColor = getRandomColor();
     //add a click function to each square
     square.onclick=function(){
-        this.style.backgroundColor = getRandomColor();
+        let topSquare = document.querySelector(".top");
+
+        if (this.classList.contains("top")) {
+            this.remove();
+        } else {
+            if (topSquare) {
+                topSquare.classList.remove("top");
+                topSquare.style.zIndex = 1;
+            }
+
+            this.classList.add("top");
+            this.style.zIndex = 10;
+        }
+      
     };
     squareArea.append(square);
 }
 //write the function to change all colors
 //get all the squares as an array 
 //call the getRandomColor on them to change their colors
+
 document.querySelector("#change").onclick=function(){
     let squares = document.querySelectorAll(".square");
     squares.forEach(function(square){
