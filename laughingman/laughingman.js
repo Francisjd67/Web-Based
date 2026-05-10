@@ -3,9 +3,14 @@ var SQUARE_COUNT=3;
 const TIMER_SPEED=100
 const SPEED = 10;
 document.addEventListener('DOMContentLoaded', () => {
-    document.querySelector("#square").addEventListener("click" , () => {
+    const specialSquare = document.querySelector("#square");
+    specialSquare.addEventListener("mouseover", (event)=>{
+        event.target.style.backgroundColor = newColor();
+    });
+    specialSquare.addEventListener("click" , () => {
         SQUARE_COUNT++;
         createSquare();
+        
     });
 
     let box = document.querySelector("#box");
@@ -29,9 +34,7 @@ function createSquare(){
     square.addEventListener("mouseout", (event)=>{  
         event.target.src = "laughing_man.jpg";
     });
-    square.addEventListener("mouseover", (event)=>{
-        event.target.style.backgroundColor = getRandomColor();
-    });
+   
     const parent = square.parentElement;
     const maxX = parent.clientWidth - square.clientWidth;
     const maxY = parent.clientHeight - square.clientHeight;
