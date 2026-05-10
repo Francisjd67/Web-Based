@@ -11,11 +11,16 @@ document.addEventListener('DOMContentLoaded', () => {
     for(let i=0; i<SQUARE_COUNT; i++){
 
         let square = document.createElement('img');
-         square.src = "laughing_man.jpg";
-         square.alt = "Laughing Man";
-         square.className = "square";
-         box.appendChild(square);
-
+        square.src = "laughing_man.jpg";
+        square.alt = "Laughing Man";
+        square.className = "square";
+        box.appendChild(square);
+        square.addEventListener("mouseover", (event)=>{
+            event.target.src = "Orochimaru.jpg";
+        });
+        square.addEventListener("mouseout", (event)=>{  
+            event.target.src = "laughing_man.jpg";
+        });
     }
 
     Array.from(box.children).forEach((element) => {
